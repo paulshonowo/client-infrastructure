@@ -8,10 +8,8 @@ terraform {
     }
   }
 
-  backend "gcs" {
-    bucket = "${var.prefix}-tfstate-prod"
-    prefix = "terraform/state/root"
-  }
+# Leave GCS config empty in code so it can be dynamically injected at init time
+  backend "gcs" {}
 }
 
 provider "google" {
